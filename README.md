@@ -1,2 +1,2 @@
 # SASS
-Basics we pages built using SASS
+Basics web pages built using SASS
