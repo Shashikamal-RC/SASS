@@ -1,0 +1,135 @@
+// used live SASS compailer in Visual Studio Code
+
+
+// variables in sass
+$color-primary: #4834DF;
+$color-accent: #01CBC6;
+
+//map-get(used for colors and fonts)
+$colors: (
+    primary: #4834DF,
+    accent: #43BE31,
+    font: #fff
+);
+
+// functions
+@function color($colorName){
+    @return map-get($map: $colors, $key: $colorName);
+};
+
+$sizes: (
+    fontone: 20px,
+    fontzero: 12px,
+    fonttwo: 30px 
+);
+
+// functions
+@function sizes($sizeName){
+    @return map-get($map: $sizes, $key: $sizeName )
+}
+
+// body{
+//     // background-color: $color-primary;
+//     // background-color: map-get($map: $colors, $key: color-primary);
+//     // calling color using functions
+//     background-color: color(primary);
+//     color: map-get($map: $colors, $key:font );
+//     // keys are not mandatory, we can directly specify the map and key
+//     // font-size: map-get($sizes, fontone );
+//     // calling size with functions
+//     font-size: sizes(fontone);
+
+// }
+
+// body{
+//     background-color: #ee5522;
+//     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23ca481d' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+// }
+
+
+body , html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+
+    .container {
+        clip-path: polygon(20% 0%, 47% 0, 100% 6%, 100% 80%, 100% 75%, 38% 100%, 0 76%, 0 0);
+        background-color: color(primary);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+
+    header{
+        a{
+            color: color(font);
+            text-decoration: none;
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 14px;
+            display: block;
+        }
+    }
+}
+
+main{
+    section#mainimage{
+        background-color: color(accent);
+        padding: 20px;
+        margin: 1em auto;
+        width: 80%;
+        color: color(font);
+        border-radius: 15px;
+    };
+    p{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        margin-bottom: -15px;
+    };
+    section#mainbutton{
+        color: color(font);
+        padding: 15px;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 1.8em;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    a{
+        margin-top: 15px;
+        color: color(font);
+        background-color: color(accent);
+        padding: 5px 35px;
+        text-decoration: none;
+        font-size: 1.5em;
+        border-radius: 5px;
+    }
+
+}
+
+//nesting example
+// main {
+//     height: 100%;
+//     p{
+//         color: #fff;
+//     }
+//     a{
+//         text-decoration: none;
+//     }
+
+//     ul{
+//         li{
+//             font-size: 10px;
+//         }
+//     }
+// }
